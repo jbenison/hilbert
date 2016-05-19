@@ -1,12 +1,6 @@
-set(HILBERT_PUBLIC_H
-        hilbert.h)
-
-set(HILBERT_SOURCES
-        ${HILBERT_PUBLIC_H}
-        hilbert.cpp)
-
 add_library(libhilbert
-        ${HILBERT_SOURCES})
+        hilbert.h
+        hilbert.cpp)
 
 target_include_directories(libhilbert
         PUBLIC
