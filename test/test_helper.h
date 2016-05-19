@@ -9,7 +9,8 @@
 // Valid Hilbert curve level has a mathematical limitation.
 // Maximum level is (number of bits)/2 or (number of bytes) * 4.
 template <typename T>
-inline bool valid_level(T n) {
+inline bool valid_level(T n)
+{
     static_assert(std::is_unsigned<T>::value, "Level must be unsigned");
     return n <= (sizeof(T) * 4);
 }
@@ -45,7 +46,8 @@ inline T random(T n) {
 // Generates a random hilbert position index that is valid for
 // the given level n
 template <typename T>
-T random_idx(T n) {
+T random_idx(T n)
+{
     assert(valid_level(n));
     return random(max_idx(n));
 };
@@ -53,7 +55,8 @@ T random_idx(T n) {
 // Generates a random x, y coordinate pair that is valid for
 // the given level n
 template <typename T>
-std::pair<T, T> random_xy(T n) {
+std::pair<T, T> random_xy(T n)
+{
     assert(valid_level(n));
     return std::move(std::make_pair(random(max_xy(n)), random(max_xy(n))));
 };
