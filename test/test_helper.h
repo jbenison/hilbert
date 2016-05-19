@@ -35,7 +35,8 @@ inline T max_xy(T n)
 
 // Helper function to generate a random number between zero and n
 template <typename T>
-inline T random(T n) {
+inline T random(T n)
+{
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<T> dis(0, n);
