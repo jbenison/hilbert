@@ -5,13 +5,13 @@
 
 namespace {
 
-class HilbertTest : public ::testing::TestWithParam<Vals<uint64_t>> {
+class HilbertTest : public ::testing::TestWithParam<Vals<uint64_t> > {
 public:
     virtual void SetUp() {
-        vals_ = std::make_unique<Vals<uint64_t>>(GetParam());
+        vals_ = std::make_unique<Vals<uint64_t> >(GetParam());
     }
 protected:
-    std::unique_ptr<Vals<uint64_t>> vals_;
+    std::unique_ptr<Vals<uint64_t> > vals_;
 };
 
 TEST_P(HilbertTest, XYToIndex) {
