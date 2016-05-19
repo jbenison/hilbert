@@ -2,7 +2,6 @@
 #define HILBERT_TEST_HELPER
 
 #include <cassert>
-#include <cmath>
 #include <limits>
 #include <random>
 #include <utility>
@@ -23,14 +22,14 @@ inline T max_idx(T n)
     // the number of bits in T
     if (n == (sizeof(T) * 4))
         return std::numeric_limits<T>::max();
-    return std::pow(std::pow(2, n), 2) - 1;
+    return n << 2 - 1;
 }
 
 // Return the maximum possible x, y coordinate values for the given level n
 template <typename T>
 inline T max_xy(T n)
 {
-    return std::pow(2, n) - 1;
+    return n << 1 - 1;
 }
 
 // Helper function to generate a random number between zero and n
