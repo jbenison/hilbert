@@ -5,6 +5,11 @@
 
 namespace {
 
+template <typename T>
+struct Vals {
+    T n, idx, x, y;
+};
+
 class HilbertTest : public ::testing::TestWithParam<Vals<uint64_t> > {
 public:
     virtual void SetUp() {

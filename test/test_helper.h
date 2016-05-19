@@ -58,9 +58,4 @@ std::pair<T, T> random_xy(T n) {
     return std::move(std::make_pair(random(max_xy(n)), random(max_xy(n))));
 };
 
-template <typename T>
-struct Vals {
-    T n, idx, x, y;
-};
-
 #endif
