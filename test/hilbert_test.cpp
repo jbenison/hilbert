@@ -14,12 +14,14 @@ protected:
     std::unique_ptr<Vals<uint64_t> > vals_;
 };
 
-TEST_P(HilbertTest, XYToIndex) {
+TEST_P(HilbertTest, XYToIndex)
+{
     uint64_t idx = hilbertXYToIndex(vals_->n, vals_->x, vals_->y);
     EXPECT_EQ(vals_->idx, idx);
 }
 
-TEST_P(HilbertTest, IndexToXY) {
+TEST_P(HilbertTest, IndexToXY)
+{
     uint64_t x, y;
     hilbertIndexToXY(vals_->n, vals_->idx, x, y);
     EXPECT_EQ(vals_->x, x);
@@ -67,4 +69,4 @@ TEST_P(HilbertInverseTest, XYIndexXY)
 
 INSTANTIATE_TEST_CASE_P(HilbertInverseTestInst, HilbertInverseTest, ::testing::Range(1, 33));
 
-}
+} // namespace {}
