@@ -1,6 +1,6 @@
 # hilbert
 
-This is an obscene fast hilbert curve algorithm developed by [rawunprotected](https://github.com/rawrunprotected/hilbert_curves) that I ported to 64 bit. It includes benchmarks and tests.
+Fast hilbert curve algorithm developed by [rawunprotected](https://github.com/rawrunprotected/hilbert_curves) that I ported to 64 bit. It includes benchmarks and tests.
 
 | Benchmark          | Time      | CPU    | Iterations
 |:------------------:|:---------:|:------:|:-----------
