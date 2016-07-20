@@ -18,7 +18,7 @@ public:
         vals_ = std::make_unique<Vals<std::uint64_t>>(GetParam());
     }
 protected:
-    std::unique_ptr<Vals<std::uint64_t> > vals_;
+    std::unique_ptr<Vals<std::uint64_t>> vals_;
 };
 
 TEST_P(HilbertTest, XYToIndex)
