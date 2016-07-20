@@ -11,6 +11,6 @@ Fast hilbert curve algorithm developed by [rawunprotected](https://github.com/ra
 | BM_IndexToXY/8     | 12 ns     | 12 ns  | 59964364
 | BM_IndexToXY/32    | 12 ns     | 12 ns  | 59845939
 
-All the relevant code is in the [cpp file](https://github.com/jbenison/hilbert/blob/master/hilbert/hilbert.cpp)
+All the relevant code is in this [header](https://github.com/jbenison/hilbert/blob/master/hilbert/hilbert.h)
 
 A discussion can be found [here](http://threadlocalmutex.com/?p=126).
