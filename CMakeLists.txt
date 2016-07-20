@@ -12,6 +12,5 @@ if (THREADS_FOUND)
     set(LIBS ${LIBS} ${CMAKE_THREAD_LIBS_INIT})
 endif()
 
-add_subdirectory(hilbert)
 add_subdirectory(benchmark)
 add_subdirectory(test)

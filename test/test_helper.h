@@ -60,7 +60,7 @@ template <typename T>
 std::pair<T, T> random_xy(T n)
 {
     assert(valid_level(n));
-    return std::move(std::make_pair(random(max_xy(n)), random(max_xy(n))));
+    return std::make_pair(random(max_xy(n)), random(max_xy(n)));
 };
 
 #endif

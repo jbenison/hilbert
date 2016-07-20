@@ -10,5 +10,4 @@ add_executable(hilbert_test
         hilbert_test.cpp)
 
 target_link_libraries(hilbert_test
-        libhilbert
         ${LIBS})

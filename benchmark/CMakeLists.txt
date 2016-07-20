@@ -6,8 +6,8 @@ if (BENCHMARK_FOUND)
 endif()
 
 add_executable(hilbert_benchmark
+        ../hilbert/hilbert.h
         hilbert_benchmark.cpp)
 
 target_link_libraries(hilbert_benchmark
-        libhilbert
         ${LIBS})
