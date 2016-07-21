@@ -3,7 +3,7 @@
 Fast hilbert curve algorithm developed by [rawunprotected](https://github.com/rawrunprotected/hilbert_curves) ported to 64 bit. It includes benchmarks and tests.
 
 | Benchmark          | Time     | CPU   | Iterations
-|:------------------:|:--------:|:--- -:|:-----------
+|:------------------:|:--------:|:-----:|:-----------
 | BM_XYToIndex/1     | 2 ns     | 2 ns  | 389906979
 | BM_XYToIndex/8     | 2 ns     | 2 ns  | 362373234
 | BM_XYToIndex/32    | 2 ns     | 2 ns  | 364389751
