@@ -8,7 +8,7 @@ namespace hilbert {
 
 namespace detail {
 
-std::uint64_t bit_deinterleave(std::uint64_t x)
+std::uint64_t bit_unzip(std::uint64_t x)
 {
     x = x & 0x5555555555555555;
     x = (x | (x >> 1)) & 0x3333333333333333;
@@ -37,8 +37,8 @@ std::pair<std::uint64_t, std::uint64_t> index_to_xy(std::uint64_t n, std::uint64
 {
     i = i << (64 - 2 * n);
 
-    std::uint64_t i0 = detail::bit_deinterleave(i);
-    std::uint64_t i1 = detail::bit_deinterleave(i >> 1);
+    std::uint64_t i0 = detail::bit_unzip(i);
+    std::uint64_t i1 = detail::bit_unzip(i >> 1);
 
     std::uint64_t t0 = (i0 | i1) ^ 0xFFFFFFFF;
     std::uint64_t t1 = i0 & i1;
@@ -56,7 +56,7 @@ std::pair<std::uint64_t, std::uint64_t> index_to_xy(std::uint64_t n, std::uint64
 
 namespace detail {
 
-std::uint64_t bit_interleave(std::uint64_t x)
+std::uint64_t bit_zip(std::uint64_t x)
 {
     x = (x | (x << 16)) & 0x0000FFFF0000FFFF;
     x = (x | (x << 8)) & 0x00FF00FF00FF00FF;
@@ -93,7 +93,7 @@ std::uint64_t xy_to_index(std::uint64_t n, std::uint64_t x, std::uint64_t y)
         std::uint64_t a = A;
         std::uint64_t b = B;
         std::uint64_t c = C;
-        std:: uint64_t d = D;
+        std::uint64_t d = D;
 
         A = ((a & (a >> 2)) ^ (b & (b >> 2)));
         B = ((a & (b >> 2)) ^ (b & ((a ^ b) >> 2)));
@@ -144,7 +144,7 @@ std::uint64_t xy_to_index(std::uint64_t n, std::uint64_t x, std::uint64_t y)
     std::uint64_t i0 = x ^ y;
     std::uint64_t i1 = b | (0xFFFFFFFF ^ (i0 | a));
 
-    return ((detail::bit_interleave(i1) << 1) | detail::bit_interleave(i0)) >> (64 - 2 * n);
+    return ((detail::bit_zip(i1) << 1) | detail::bit_zip(i0)) >> (64 - 2 * n);
 }
 
 }
